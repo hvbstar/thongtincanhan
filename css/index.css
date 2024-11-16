@@ -1653,4 +1653,48 @@ SKILLS START
               inset 2px 2px 6px rgba(255, 255, 255, 0.2),
               inset -1px -1px 6px rgba(218, 218, 218, 0.75);
 }
+.bright-text {
+  color: white; /* Màu chữ trắng */
+  font-size: 32px; /* Kích thước chữ */
+  text-shadow: 0 0 10px rgba(0, 191, 255, 0.8),  /* Viền xanh nước biển sáng */
+               0 0 20px rgba(0, 191, 255, 0.6), 
+               0 0 30px rgba(0, 191, 255, 0.4), 
+               0 0 40px rgba(0, 191, 255, 0.2); /* Viền xanh nước biển dần mờ */
+  text-decoration: underline; /* Thêm dấu gạch chân cho chữ */
+}
+
+/* Hiệu ứng chữ nhấp nháy viền nhiều màu với tốc độ chậm */
+#userName {
+  font-family: 'Pattaya';
+  font-size: 35px;
+  color: #fff; /* Màu chữ chính */
+  animation: glowEffect 3s infinite;
+}
+
+@keyframes glowEffect {
+  0% { text-shadow: 0 0 8px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green; }
+  25% { text-shadow: 0 0 8px green, 0 0 15px blue, 0 0 20px indigo, 0 0 25px violet; }
+  50% { text-shadow: 0 0 8px violet, 0 0 15px pink, 0 0 20px red, 0 0 25px orange; }
+  75% { text-shadow: 0 0 8px yellow, 0 0 15px cyan, 0 0 20px green, 0 0 25px blue; }
+  100% { text-shadow: 0 0 8px red, 0 0 15px orange, 0 0 20px yellow, 0 0 25px green; }
+}
+
+/* Hiệu ứng tích xanh đổi màu với cùng tốc độ */
+/* .color-changing-icon {
+  animation: slowColorChange 3s infinite;
+}
+
+@keyframes slowColorChange {
+  0% { filter: hue-rotate(0deg); }
+  20% { filter: hue-rotate(60deg); }
+  40% { filter: hue-rotate(120deg); }
+  60% { filter: hue-rotate(180deg); }
+  80% { filter: hue-rotate(240deg); }
+  100% { filter: hue-rotate(300deg); }
+} */
+
+
+
+
+
 
