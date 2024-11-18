@@ -5889,6 +5889,55 @@ function show_date_time() {
 }
 show_date_time();
 
+// Facebook
+document.addEventListener('DOMContentLoaded', function () {
+    var facebookDiv = document.querySelector('.Facebook');
+    facebookDiv.addEventListener('click', function () {
+        window.open('https://www.facebook.com/HVB.Profile', '_blank');
+    });
+});
+
+// Instagram
+document.addEventListener('DOMContentLoaded', function () {
+    var instagramDiv = document.querySelector('.Instagram');
+    instagramDiv.addEventListener('click', function () {
+        window.open('https://www.instagram.com/oba.vh_/', '_blank');
+    });
+});
+
+// Tiktok
+document.addEventListener('DOMContentLoaded', function () {
+    var tiktokDiv = document.querySelector('.Tiktok');
+    tiktokDiv.addEventListener('click', function () {
+        window.open('https://www.tiktok.com/@_.hvb', '_blank');
+    });
+});
+
+// Youtube
+document.addEventListener('DOMContentLoaded', function () {
+    var youtubeDiv = document.querySelector('.Youtube');
+    youtubeDiv.addEventListener('click', function () {
+        window.open('https://www.youtube.com/@hvb2017', '_blank');
+    });
+});
+
+// Twitter (Thêm mới)
+document.addEventListener('DOMContentLoaded', function () {
+    var twitterDiv = document.querySelector('.Twitter');
+    twitterDiv.addEventListener('click', function () {
+        window.open('https://x.com/hvbfaq', '_blank');
+    });
+});
+
+// Github
+document.addEventListener('DOMContentLoaded', function () {
+    var githubDiv = document.querySelector('.Github');
+    githubDiv.addEventListener('click', function () {
+        window.open('https://github.com/hvbstar', '_blank');
+    });
+});
+
+// Telegram
 document.addEventListener('DOMContentLoaded', function () {
     var telegramDiv = document.querySelector('.Telegram');
     telegramDiv.addEventListener('click', function () {
@@ -5896,42 +5945,14 @@ document.addEventListener('DOMContentLoaded', function () {
     });
 });
 
+// Zalo
 document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Github');
-    telegramDiv.addEventListener('click', function () {
-        window.open('https://github.com/hvbstar', '_blank');
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Facebook');
-    telegramDiv.addEventListener('click', function () {
-        window.open('https://www.facebook.com/HVB.Profile', '_blank');
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Instagram');
-    telegramDiv.addEventListener('click', function () {
-        window.open('https://www.instagram.com/oba.vh_/', '_blank');
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Tiktok');
-    telegramDiv.addEventListener('click', function () {
-        window.open('https://www.tiktok.com/@_.hvb', '_blank');
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Youtube');
-    telegramDiv.addEventListener('click', function () {
-        window.open('https://www.youtube.com/@hvb2017', '_blank');
-    });
-});
-document.addEventListener('DOMContentLoaded', function () {
-    var telegramDiv = document.querySelector('.Zalo');
-    telegramDiv.addEventListener('click', function () {
+    var zaloDiv = document.querySelector('.Zalo');
+    zaloDiv.addEventListener('click', function () {
         window.open('https://zalo.me/0395152981', '_blank');
     });
 });
+
 
 
 // Thay đổi nội dung của phần tử có id "checkip_address" bằng thông tin đã cho
