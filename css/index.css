@@ -1680,7 +1680,7 @@ SKILLS START
 }
 
 /* Hiệu ứng tích xanh đổi màu với cùng tốc độ */
-/* .color-changing-icon {
+.color-changing-icon {
   animation: slowColorChange 3s infinite;
 }
 
