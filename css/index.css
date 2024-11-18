@@ -1691,10 +1691,16 @@ SKILLS START
   60% { filter: hue-rotate(180deg); }
   80% { filter: hue-rotate(240deg); }
   100% { filter: hue-rotate(300deg); }
-} */
+}
+
+#flashing-text {
+  font-style: italic;
+}
 
 
-
+.bank-card {
+  margin-top: 50px; /* Kéo lên 20px */
+}
 
 
 
