@@ -1,3 +1,30 @@
+// Mã hóa và hiển thị phần bản quyền "Design By Hoang Van Bao."
+(function() {
+    const _0x1dc45a = _0x49f7;
+    const _0x246a = ['&#68;&#101;&#115;&#105;&#103;&#110;&#32;&#98;&#121;&#32;&#72;&#111;&#97;&#110;&#103;&#32;&#86;&#97;&#110;&#32;&#66;&#97;&#111;']; // Mã hóa phần bản quyền
+
+    const copyrightText = _0x246a[0];
+
+    // Tạo phần tử để hiển thị văn bản
+    const copyrightElement = document.createElement('div');
+    copyrightElement.style.position = 'fixed';
+    copyrightElement.style.bottom = '5px';  // Điều chỉnh vị trí từ dưới lên
+    copyrightElement.style.left = '50%';
+    copyrightElement.style.transform = 'translateX(-50%)';
+    copyrightElement.style.color = 'white'; // Màu trắng
+    copyrightElement.style.fontSize = '14px';
+    copyrightElement.style.zIndex = '9999'; // Đảm bảo nó ở trên cùng
+    copyrightElement.innerHTML = copyrightText; // Thêm nội dung bản quyền vào phần tử
+    
+    // Thêm phần tử vào body
+    document.body.appendChild(copyrightElement);
+})();
+
+// Hàm làm mờ (obfuscate) phần mã nguồn JavaScript để ngăn chặn việc chỉnh sửa dễ dàng
+function _0x49f7(_0x532f85) {
+    const _0x246a69 = ['Design By Hoang Van Bao'];
+    return _0x246a69[0];
+}
 
 // Config content (json): this configuration is applied to the particles
 // Refer to https://github.com/VincentGarreau/particles.js/ to customize this file
