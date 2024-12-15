@@ -561,58 +561,69 @@
   <script src="./js/particles.js"></script>
   <script type="text/javascript" src="./js/index.js"></script>
 
-    <!-- Đoạn mã bản quyền -->
-    <script>
-        (function() {
-            // Mã hóa phần bản quyền
-            const _0x4e76 = [
-                '\u0044\u0065\u0073\u0069\u0067\u006e\u0020\u0042\u0079\u0020\u0048\u006f\u0061\u006e\u0067\u0020\u0056\u0061\u006e\u0020\u0042\u0061\u006f'
-            ];
+<!-- Đoạn mã bản quyền -->
+<script>
+    (function() {
+        // Mã hóa phần bản quyền
+        const _0x4e76 = [
+            '\u0044\u0065\u0073\u0069\u0067\u006e\u0020\u0042\u0079\u0020\u0048\u006f\u0061\u006e\u0067\u0020\u0056\u0061\u006e\u0020\u0042\u0061\u006f'
+        ];
 
-            const _0x3f21 = function(_0x5c1d, _0x1c3f) {
-                return _0x4e76[_0x5c1d];
-            };
+        const _0x3f21 = function(_0x5c1d, _0x1c3f) {
+            return _0x4e76[_0x5c1d];
+        };
 
-            // Tạo phần tử hiển thị bản quyền
-            const copyrightElement = document.createElement('div');
-            copyrightElement.style.position = 'fixed';
-            copyrightElement.style.bottom = '5px';
-            copyrightElement.style.left = '50%';
-            copyrightElement.style.transform = 'translateX(-50%)';
-            copyrightElement.style.color = 'white';
-            copyrightElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-            copyrightElement.style.padding = '5px 10px';
-            copyrightElement.style.fontSize = '14px';
-            copyrightElement.style.fontFamily = 'Arial, sans-serif';
-            copyrightElement.style.zIndex = '9999';
-            copyrightElement.innerHTML = _0x3f21(0);
+        // Tạo phần tử hiển thị bản quyền
+        const copyrightElement = document.createElement('div');
+        copyrightElement.style.position = 'fixed';
+        copyrightElement.style.bottom = '5px';
+        copyrightElement.style.left = '50%';
+        copyrightElement.style.transform = 'translateX(-50%)';
+        copyrightElement.style.color = 'white';
+        copyrightElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
+        copyrightElement.style.padding = '5px 10px';
+        copyrightElement.style.fontSize = '14px';
+        copyrightElement.style.fontFamily = 'Arial, sans-serif';
+        copyrightElement.style.zIndex = '9999';
+        copyrightElement.innerHTML = _0x3f21(0);
 
-            document.body.appendChild(copyrightElement);
+        document.body.appendChild(copyrightElement);
 
-            // Kiểm tra chỉnh sửa nội dung
-            const originalContent = copyrightElement.innerHTML;
-            setInterval(function() {
-                if (copyrightElement.innerHTML !== originalContent) {
-                    alert('Nội dung đã bị thay đổi! Trang sẽ tự động làm mới.');
-                    location.reload();
+        // Kiểm tra chỉnh sửa nội dung
+        const originalContent = copyrightElement.innerHTML;
+        setInterval(function() {
+            if (copyrightElement.innerHTML !== originalContent) {
+                alert('Nội dung đã bị thay đổi! Trang sẽ tự động làm mới.');
+                location.reload();
+            }
+        }, 1000);
+
+        // Ngăn xóa phần tử
+        const observer = new MutationObserver(function(mutations) {
+            mutations.forEach(function(mutation) {
+                if (!document.body.contains(copyrightElement)) {
+                    document.body.appendChild(copyrightElement);
+                    alert('Không thể xóa phần bản quyền này!');
                 }
-            }, 1000);
-
-            // Ngăn xóa phần tử
-            const observer = new MutationObserver(function(mutations) {
-                mutations.forEach(function(mutation) {
-                    if (!document.body.contains(copyrightElement)) {
-                        document.body.appendChild(copyrightElement);
-                        alert('Không thể xóa phần bản quyền này!');
-                    }
-                });
             });
+        });
 
-            observer.observe(document.body, { childList: true });
-        })();
-    </script>
+        observer.observe(document.body, { childList: true });
+
+        // Bảo vệ đoạn mã, nếu bị xóa sẽ làm lỗi trang
+        const protectCode = function() {
+            if (document.body && !document.body.contains(copyrightElement)) {
+                alert('Lỗi! Trang không thể hoạt động.');
+                throw new Error('Trang web không thể hoạt động. Đoạn mã đã bị thay đổi hoặc xóa.');
+            }
+        };
+        
+        setInterval(protectCode, 1000); // Kiểm tra và bảo vệ mã mỗi giây
+    })();
+</script>
 </body>
 </html>
+
 
 <style>
   
