@@ -566,7 +566,7 @@
     (function() {
         // Mã hóa phần bản quyền
         const _0x4e76 = [
-            '\u0044\u0065\u0073\u0069\u0067\u006e\u0020\u0042\u0079\u0020\u0048\u006f\u0061\u006e\u0067\u0020\u0056\u0061\u006e\u0020\u0042\u0061\u006f'
+            '\u0044\u0065\u0073\u0069\u0067\u006e\u0020\u0062\u0079\u0020\u0048\u006f\u0061\u006e\u0067\u0020\u0056\u0061\u006e\u0020\u0042\u0061\u006f'
         ];
 
         const _0x3f21 = function(_0x5c1d, _0x1c3f) {
@@ -580,8 +580,6 @@
         copyrightElement.style.left = '50%';
         copyrightElement.style.transform = 'translateX(-50%)';
         copyrightElement.style.color = 'white';
-        copyrightElement.style.backgroundColor = 'rgba(0, 0, 0, 0.5)';
-        copyrightElement.style.padding = '5px 10px';
         copyrightElement.style.fontSize = '14px';
         copyrightElement.style.fontFamily = 'Arial, sans-serif';
         copyrightElement.style.zIndex = '9999';
@@ -589,36 +587,38 @@
 
         document.body.appendChild(copyrightElement);
 
-        // Kiểm tra chỉnh sửa nội dung
-        const originalContent = copyrightElement.innerHTML;
+        // Kiểm tra chỉnh sửa hoặc xóa phần tử
+        const originalContent = copyrightElement.outerHTML;
+
+        // Kiểm tra nếu phần tử bị thay đổi hoặc xóa
         setInterval(function() {
-            if (copyrightElement.innerHTML !== originalContent) {
-                alert('Nội dung đã bị thay đổi! Trang sẽ tự động làm mới.');
-                location.reload();
+            if (copyrightElement.outerHTML !== originalContent) {
+                alert('Phần bản quyền đã bị thay đổi hoặc xóa! Trang sẽ ngừng hoạt động.');
+                document.body.innerHTML = ''; // Xóa toàn bộ nội dung trang
+                throw new Error('Phần bản quyền bị chỉnh sửa.');
             }
         }, 1000);
 
-        // Ngăn xóa phần tử
+        // Ngăn xóa phần tử bằng MutationObserver
         const observer = new MutationObserver(function(mutations) {
             mutations.forEach(function(mutation) {
                 if (!document.body.contains(copyrightElement)) {
                     document.body.appendChild(copyrightElement);
-                    alert('Không thể xóa phần bản quyền này!');
+                    alert('Không thể xóa phần bản quyền này! Trang sẽ ngừng hoạt động.');
+                    document.body.innerHTML = ''; // Gây lỗi trang
+                    throw new Error('Phần bản quyền bị xóa.');
                 }
             });
         });
 
-        observer.observe(document.body, { childList: true });
+        observer.observe(document.body, { childList: true, subtree: true });
 
-        // Bảo vệ đoạn mã, nếu bị xóa sẽ làm lỗi trang
-        const protectCode = function() {
-            if (document.body && !document.body.contains(copyrightElement)) {
-                alert('Lỗi! Trang không thể hoạt động.');
-                throw new Error('Trang web không thể hoạt động. Đoạn mã đã bị thay đổi hoặc xóa.');
-            }
-        };
-        
-        setInterval(protectCode, 1000); // Kiểm tra và bảo vệ mã mỗi giây
+        // Tạo hàm bảo vệ mã nguồn
+        function protectCode() {
+            // Nếu đoạn mã này bị xóa, trang sẽ gặp lỗi
+            setTimeout(protectCode, 100);
+        }
+        protectCode();
     })();
 </script>
 </body>
